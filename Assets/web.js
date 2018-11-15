@@ -10,15 +10,26 @@
         document.getElementById("myOverlay").style.display = "none";
     }
     
+    //calculation
     function multiplyBy()
     {
             num1 = document.getElementById("distance").value;
             num2 = document.getElementById("base").value;
             num3 = document.getElementById("expense").value;
             num4 = document.getElementById("tolls").value;
-            document.getElementById("result").innerHTML = num1 * num2 - num3 - num4;
+            num5 = document.getElementById("tax").value;
+            document.getElementById("result").innerHTML = num1 * num2 - num3 - num4 ;
     }
 
+    function CalculateIVU() {
+      var price = document.forms.txts.value;
+      var evaluation = price;
+      var tax = 0.825 * evaluation;
+      var final = +tax - +evaluation;
+      document.getElementById('res').value = final;
+    }
+
+//Google Map
     function initMap() {
         var directionsDisplay = new google.maps.DirectionsRenderer;
         var directionsService = new google.maps.DirectionsService;

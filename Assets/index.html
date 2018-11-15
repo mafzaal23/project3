@@ -16,7 +16,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 <body class="w3-content w3-border-left w3-border-right">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3;width:260px" id="mySidebar">
+<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3;width:360px" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-17">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
     <img src="/Assets/styles.css/image/imageedit_6_3033445388.png"style="width: 160px;height: 70px;">
@@ -26,7 +26,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 
     <form action="/action_page.php" target="_blank">
       <div id="floating-panel">
-        <b>Mode of Travel: </b>
+        <b>Mode: </b>
         <select id="mode">
           <option value="DRIVING">Driving</option>
           <option value="WALKING">Walking</option>
@@ -45,20 +45,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
         <option value="BMW">BMW</option>
         <option value="audi">Audi</option>
       </select>        
+     
       <p><label><i class="fa fa-code-fork"></i> Distance</label></p>
       <input class="w3-input w3-border" type="text" id="distance" /><br>       
+     
       <p><label><i class="fa fa-thermometer-2"></i> Base Rate</label></p>
       <input class="w3-input w3-border" type="text" id="base" /><br> 
 
       <p><label><i class="fa fa-money"></i> Expenses</label></p>
       <input class="w3-input w3-border" type="text" id="expense" /><br>  
+     
       <p><label><i class="fa fa-money"></i> Tolls</label></p>
       <input class="w3-input w3-border" type="text" id="tolls" /><br> 
-      <br>
+       
+  
       <input class="w3-button w3-block w3-green w3-center-align" type="button" onClick="multiplyBy()" Value="Calculate" />
       <p>Total : <br>
         <span id = "result"></span>
         </p>
+        <br>   
+        
     </form>
   </div>
   <div class="w3-bar-block">
@@ -129,6 +135,47 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
 
   <div class="w3-container">
     <h4><strong>Stress-free logging. Accurate mileage reports. All in the palm of your hand.</strong></h4>
+
+    <form name="forms" id="forma">
+      <table>
+        <tr>
+          <td>
+            <label>Total Earnings</label>
+            <input class="w3-input w3-border" type="text" name="txts" size=20>
+            </br>
+            <label>Total Tax Due</label>
+            <input class="w3-input w3-border" type="text" name="resul" id="res">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <INPUT TYPE="button" NAME="one" VALUE="  1  " OnClick="forms.txts.value += '1'">
+            <INPUT TYPE="button" NAME="two" VALUE="  2  " OnCLick="forms.txts.value += '2'">
+            <INPUT TYPE="button" NAME="three" VALUE="  3  " OnClick="forms.txts.value  += '3'">
+            <INPUT TYPE="button" NAME="plus" VALUE="  +  " OnClick="forms.txts.value += '+ '">
+            <br>
+            <INPUT TYPE="button" NAME="four" VALUE="  4  " OnClick="forms.txts.value += '4'">
+            <INPUT TYPE="button" NAME="five" VALUE="  5  " OnCLick="forms.txts.value += '5'">
+            <INPUT TYPE="button" NAME="six" VALUE="  6  " OnClick="forms.txts.value += '6'">
+    
+            <br>
+            <INPUT TYPE="button" NAME="seven" VALUE="  7  " OnClick="forms.txts.value+= '7'">
+            <INPUT TYPE="button" NAME="eight" VALUE="  8  " OnCLick="forms.txts.value += '8'">
+            <INPUT TYPE="button" NAME="nine" VALUE="  9  " OnClick="forms.txts.value += '9'">
+    
+            <br>
+            <INPUT TYPE="button" NAME="clear" VALUE="  c  " OnClick="forms.txts.value = ''" OnClick="forms.resul.value = ''">
+            <INPUT TYPE="button" NAME="zero" VALUE="  0  " OnClick="forms.txts.value += '0'">
+            <INPUT TYPE="button" NAME="DoIt" VALUE="  =  " OnClick="CalculateIVU() = eval(forms.txts.value);">
+    
+            <br>
+            <input type="button" id="input" value="Calcular" onClick='CalculateIVU();'>
+    
+          </td>
+        </tr>
+    
+    </form>
+    </div>
 
 <!-- End page content -->
 </div>

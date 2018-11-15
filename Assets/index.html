@@ -1,0 +1,181 @@
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/Assets/styles.css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAET8YnzamWuUFEgOA4UGCMTpDXLLKEtU&callback=initMap">
+    </script>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+.mySlides {display:none}
+</style>
+<body class="w3-content w3-border-left w3-border-right">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3;width:260px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-17">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
+    <img src="/Assets/styles.css/image/imageedit_6_3033445388.png"style="width: 160px;height: 70px;">
+    <h3>Take a Drive</h3>
+    <hr>
+    
+
+    <form action="/action_page.php" target="_blank">
+      <div id="floating-panel">
+        <b>Mode of Travel: </b>
+        <select id="mode">
+          <option value="DRIVING">Driving</option>
+          <option value="WALKING">Walking</option>
+          <option value="BICYCLING">Bicycling</option>
+          <option value="TRANSIT">Transit</option>
+        </select>
+        </div>
+        <div id="map"></div>
+        <br>
+
+
+      <p><label><i class="fa fa-automobile"></i> Vehicle Model</label></p>
+      <select>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="BMW">BMW</option>
+        <option value="audi">Audi</option>
+      </select>        
+      <p><label><i class="fa fa-code-fork"></i> Distance</label></p>
+      <input class="w3-input w3-border" type="text" id="distance" /><br>       
+      <p><label><i class="fa fa-thermometer-2"></i> Base Rate</label></p>
+      <input class="w3-input w3-border" type="text" id="base" /><br> 
+
+      <p><label><i class="fa fa-money"></i> Expenses</label></p>
+      <input class="w3-input w3-border" type="text" id="expense" /><br>  
+      <p><label><i class="fa fa-money"></i> Tolls</label></p>
+      <input class="w3-input w3-border" type="text" id="tolls" /><br> 
+      <br>
+      <input class="w3-button w3-block w3-green w3-center-align" type="button" onClick="multiplyBy()" Value="Calculate" />
+      <p>Total : <br>
+        <span id = "result"></span>
+        </p>
+    </form>
+  </div>
+  <div class="w3-bar-block">
+
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <span class="w3-bar-item">Lets Drive</span>
+  <a href="javascript:void(0)" class="w3-right w3-bar-item w3-button" onclick="w3_open()"><i class="fa fa-line-chart"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-white" style="margin-left:260px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:80px"></div>
+
+  <!-- Slideshow Header -->
+  <div class="w3-container" id="apartment">
+    <img src="/Assets/styles.css/image/imageedit_6_3033445388.png" alt="runr" class="center" style="width: 160px;height: 70px;">
+    <div class="w3-display-container mySlides">
+    <img src="/Assets/styles.css/image/island_road_by_dobee.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p>Automatic Tracking
+        </p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="/Assets/styles.css/image/driving+lessons+with+DrivEASY.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p>Classify Drives With Ease</p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="/Assets/styles.css/image/how-to-select-the-right-database-to-empower-your-fundraising-42-638.jpg" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p>Accurate Reports </p>
+      </div>
+    </div>
+    <div class="w3-display-container mySlides">
+    <img src="/Assets/styles.css/image/cloudstorage.png" style="width:100%;margin-bottom:-6px">
+      <div class="w3-display-bottomleft w3-container w3-black">
+        <p>accessible across all your devices</p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="/Assets/styles.css/image/island_road_by_dobee.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)" title="Automatic Tracking
+      ">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="/Assets/styles.css/image/driving+lessons+with+DrivEASY.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)" title="Classify Drives With Ease">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="/Assets/styles.css/image/how-to-select-the-right-database-to-empower-your-fundraising-42-638.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)" title="Accurate Reports
+      ">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="/Assets/styles.css/image/cloudstorage.png" style="width:100%;cursor:pointer" onclick="currentDiv(4)" title="Accessible Across All Your Devices">
+    </div>
+  </div>
+
+  <div class="w3-container">
+    <h4><strong>Stress-free logging. Accurate mileage reports. All in the palm of your hand.</strong></h4>
+
+<!-- End page content -->
+</div>
+
+<form action="/action_page.php">
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <hr>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
+  </div>
+</form>
+
+<!-- Contact -->
+<div class="w3-container" id="contact">
+  <h2>Contact</h2>
+  <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
+  <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
+  <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+  <p>Questions? Go ahead, ask them:</p>
+  <form action="/action_page.php" target="_blank">
+    <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+  <button type="submit" class="w3-button w3-green w3-third">Send a Message</button>
+  </form>
+</div>
+
+<footer class="w3-container w3-padding-16" style="margin-top:32px">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">Runr</a></footer>
+
+<script src="/Assets/web.js"></script>
+    </body>
+    </html>
+    
